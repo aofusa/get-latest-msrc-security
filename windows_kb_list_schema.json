@@ -1,0 +1,95 @@
+{
+    "definitions": {},
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "http://example.com/root.json",
+    "type": "array",
+    "title": "The Root Schema",
+    "items": {
+        "$id": "#/items",
+        "type": "object",
+        "title": "The Items Schema",
+        "required": [
+            "os",
+            "patch"
+        ],
+        "properties": {
+            "os": {
+                "$id": "#/items/properties/os",
+                "type": "string",
+                "title": "The Os Schema",
+                "default": "",
+                "examples": [
+                    "Windows 10"
+                ],
+                "pattern": "^(.*)$"
+            },
+            "patch": {
+                "$id": "#/items/properties/patch",
+                "type": "array",
+                "title": "The Patch Schema",
+                "items": {
+                    "$id": "#/items/properties/patch/items",
+                    "type": "object",
+                    "title": "The Items Schema",
+                    "required": [
+                        "version",
+                        "container"
+                    ],
+                    "properties": {
+                        "version": {
+                            "$id": "#/items/properties/patch/items/properties/version",
+                            "type": "string",
+                            "title": "The Version Schema",
+                            "default": "",
+                            "examples": [
+                                "17134"
+                            ],
+                            "pattern": "^(.*)$"
+                        },
+                        "container": {
+                            "$id": "#/items/properties/patch/items/properties/container",
+                            "type": "array",
+                            "title": "The Container Schema",
+                            "items": {
+                                "$id": "#/items/properties/patch/items/properties/container/items",
+                                "type": "object",
+                                "title": "The Items Schema",
+                                "required": [
+                                    "date",
+                                    "kb"
+                                ],
+                                "properties": {
+                                    "date": {
+                                        "$id": "#/items/properties/patch/items/properties/container/items/properties/date",
+                                        "type": "string",
+                                        "title": "The Date Schema",
+                                        "default": "",
+                                        "examples": [
+                                            "2019-03-12"
+                                        ],
+                                        "pattern": "^(.*)$"
+                                    },
+                                    "kb": {
+                                        "$id": "#/items/properties/patch/items/properties/container/items/properties/kb",
+                                        "type": "array",
+                                        "title": "The Kb Schema",
+                                        "items": {
+                                            "$id": "#/items/properties/patch/items/properties/container/items/properties/kb/items",
+                                            "type": "string",
+                                            "title": "The Items Schema",
+                                            "default": "",
+                                            "examples": [
+                                                "4489871"
+                                            ],
+                                            "pattern": "^(.*)$"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

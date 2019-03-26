@@ -1,0 +1,109 @@
+[{
+    "os": "Windows 10",
+    "patch": [{
+        "version": "16299",
+        "container": [{
+            "date": "2019-03-27",
+            "kb": ["4486996", "4480979"]
+        }]
+    }, {
+        "version": "15063",
+        "container": [{
+            "date": "2019-03-27",
+            "kb": ["4487020", "4480979"]
+        }]
+    }, {
+        "version": "17134",
+        "container": [{
+            "date": "2019-03-27",
+            "kb": ["4487017", "4480979"]
+        }]
+    }, {
+        "version": "10240",
+        "container": [{
+            "date": "2019-03-27",
+            "kb": ["4487018", "4480979"]
+        }]
+    }, {
+        "version": "14393",
+        "container": [{
+            "date": "2019-03-27",
+            "kb": ["4487026", "4480979"]
+        }]
+    }, {
+        "version": "17763",
+        "container": [{
+            "date": "2019-03-27",
+            "kb": ["4480979", "4487044"]
+        }]
+    }]
+}, {
+    "os": "Windows Server 2016",
+    "patch": [{
+        "version": "1709",
+        "container": [{
+            "date": "2019-03-27",
+            "kb": ["4486996"]
+        }]
+    }, {
+        "version": "1803",
+        "container": [{
+            "date": "2019-03-27",
+            "kb": ["4487017"]
+        }]
+    }, {
+        "version": "",
+        "container": [{
+            "date": "2019-03-27",
+            "kb": ["4487026", "4480979"]
+        }]
+    }]
+}, {
+    "os": "Windows Server 2012",
+    "patch": [{
+        "version": "",
+        "container": [{
+            "date": "2019-03-27",
+            "kb": ["4480979"]
+        }]
+    }]
+}, {
+    "os": "Windows 8",
+    "patch": [{
+        "version": "2019-03 Security Update for Adobe Flash Player for Windows 8.1 for x64-based Systems (KB4489907)",
+        "container": [{
+            "date": "2019-03-27",
+            "kb": ["4480979"]
+        }]
+    }, {
+        "version": "2019-03 Security Update for Adobe Flash Player for Windows 8.1 for x86-based Systems (KB4489907)",
+        "container": [{
+            "date": "2019-03-27",
+            "kb": ["4480979"]
+        }]
+    }]
+}, {
+    "os": "Windows ",
+    "patch": [{
+        "version": "2019-03 Security Update for Adobe Flash Player for Windows Embedded 8 Standard for x86-based Systems (KB4489907)",
+        "container": [{
+            "date": "2019-03-27",
+            "kb": ["4480979"]
+        }]
+    }, {
+        "version": "2019-03 Security Update for Adobe Flash Player for Windows Embedded 8 Standard for x64-based Systems (KB4489907)",
+        "container": [{
+            "date": "2019-03-27",
+            "kb": ["4480979"]
+        }]
+    }]
+}, {
+    "os": "Windows Server 2019",
+    "patch": [{
+        "version": "",
+        "container": [{
+            "date": "2019-03-27",
+            "kb": ["4480979", "4487044"]
+        }]
+    }]
+}]
