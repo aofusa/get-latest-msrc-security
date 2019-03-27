@@ -34,7 +34,13 @@
         "version": "17763",
         "container": [{
             "date": "2019-03-27",
-            "kb": ["4480979", "4487044"]
+            "kb": ["4487044", "4480979"]
+        }]
+    }, {
+        "version": "",
+        "container": [{
+            "date": "2019-03-27",
+            "kb": ["4018313", "4462143", "4462155"]
         }]
     }]
 }, {
@@ -52,16 +58,43 @@
             "kb": ["4487017"]
         }]
     }, {
-        "version": "",
+        "version": "2016",
         "container": [{
             "date": "2019-03-27",
             "kb": ["4487026", "4480979"]
         }]
     }]
 }, {
-    "os": "Windows Server 2012",
+    "os": "Windows Server 2019",
+    "patch": [{
+        "version": "2019",
+        "container": [{
+            "date": "2019-03-27",
+            "kb": ["4487044", "4480979"]
+        }]
+    }]
+}, {
+    "os": "Windows Server 2008",
+    "patch": [{
+        "version": "2008",
+        "container": [{
+            "date": "2019-03-27",
+            "kb": ["3212642"]
+        }]
+    }]
+}, {
+    "os": "Windows 7",
     "patch": [{
         "version": "",
+        "container": [{
+            "date": "2019-03-27",
+            "kb": ["3212642"]
+        }]
+    }]
+}, {
+    "os": "Windows Server 2012",
+    "patch": [{
+        "version": "2012",
         "container": [{
             "date": "2019-03-27",
             "kb": ["4480979"]
@@ -70,40 +103,19 @@
 }, {
     "os": "Windows 8",
     "patch": [{
-        "version": "2019-03 Security Update for Adobe Flash Player for Windows 8.1 for x64-based Systems (KB4489907)",
-        "container": [{
-            "date": "2019-03-27",
-            "kb": ["4480979"]
-        }]
-    }, {
-        "version": "2019-03 Security Update for Adobe Flash Player for Windows 8.1 for x86-based Systems (KB4489907)",
+        "version": "",
         "container": [{
             "date": "2019-03-27",
             "kb": ["4480979"]
         }]
     }]
 }, {
-    "os": "Windows ",
-    "patch": [{
-        "version": "2019-03 Security Update for Adobe Flash Player for Windows Embedded 8 Standard for x86-based Systems (KB4489907)",
-        "container": [{
-            "date": "2019-03-27",
-            "kb": ["4480979"]
-        }]
-    }, {
-        "version": "2019-03 Security Update for Adobe Flash Player for Windows Embedded 8 Standard for x64-based Systems (KB4489907)",
-        "container": [{
-            "date": "2019-03-27",
-            "kb": ["4480979"]
-        }]
-    }]
-}, {
-    "os": "Windows Server 2019",
+    "os": "Windows 8.1",
     "patch": [{
         "version": "",
         "container": [{
             "date": "2019-03-27",
-            "kb": ["4480979", "4487044"]
+            "kb": ["4480979"]
         }]
     }]
 }]

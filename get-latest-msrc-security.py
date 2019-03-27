@@ -104,6 +104,10 @@ if Path(add_file_path).exists():
             jsonschema.validate(a, v)
         output_data_list = a
 
+# 正規表現エンジンの作成
+os_re = re.compile(r'(?:Windows *(?:\d+.?\d+)|Windows *Server *(?:\d+))')
+version_re = re.compile(r'(?:Version|Windows *Server *(?:\d*)) +\(?(\d+)\)?')
+
 # クローリング
 progressbar = ProgressBar(0, len(kb_data_list))
 for index, kb_data in enumerate(kb_data_list):
@@ -118,23 +122,29 @@ for index, kb_data in enumerate(kb_data_list):
         [t.strip() for a in soup.findAll('a')
          for t in a.contents if 'Windows' in t]
     for t in text:
-        if re.search(r'Windows Server (\d*)', t) is not None:
-            os = re.search(r'Windows Server (\d*)', t).group(0)
-        elif re.search(r'Windows (\d*)', t) is not None:
-            os = re.search(r'Windows (\d*)', t).group(0)
-        else:
-            os = t
-        if re.search(r'Windows Server (\d*) \((\d*)\)', t) is not None:
-            version = \
-                re.search(r'Windows Server (\d*) \((\d*)\)',
-                          t).group(0).split(' ')[3].lstrip('(').rstrip(')')
-        elif re.search(r'Windows Server (\d*) (\d*)', t) is not None:
-            version = re.search(r'Windows Server (\d*) (\d*)',
-                                t).group(0).split(' ')[3]
-        elif re.search(r'Version (\d*)', t) is not None:
-            version = re.search(r'Version (\d*)', t).group(0).split(' ')[1]
-        else:
-            version = t
+        if os_re.search(t) is None:
+            continue
+        os = os_re.search(t).group()
+        version = ''
+        if version_re.search(t) is not None:
+            version = version_re.search(t).group(1)
+        # if re.search(r'Windows Server (\d+)', t) is not None:
+        #     os = re.search(r'Windows Server (\d*)', t).group(0)
+        # elif re.search(r'Windows (\d+)', t) is not None:
+        #     os = re.search(r'Windows (\d+)', t).group(0)
+        # else:
+        #     os = t
+        # if re.search(r'Windows Server (\d+) \((\d+)\)', t) is not None:
+        #     version = \
+        #         re.search(r'Windows Server (\d+) \((\d+)\)',
+        #                   t).group(0).split(' ')[3].lstrip('(').rstrip(')')
+        # elif re.search(r'Windows Server (\d+) (\d+)', t) is not None:
+        #     version = re.search(r'Windows Server (\d+) (\d+)',
+        #                         t).group(0).split(' ')[3]
+        # elif re.search(r'Version (\d+)', t) is not None:
+        #     version = re.search(r'Version (\d+)', t).group(0).split(' ')[1]
+        # else:
+        #     version = t
         if 'Windows 10' in os and str(version) in win10_build:
             version = win10_build[str(version)]
         result_data = {
