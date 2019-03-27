@@ -50,6 +50,26 @@ assert r.status_code == requests.codes.ok, \
 
 data = r.json()
 
+# 必要な情報を取得する
+# data['Vulnerability'][0]['Remediations'][0]['SubType'] に
+#  'Security Update' が入っているか確認
+# data['Vulnerability'][0]['Remediations'][0]['Supercedence'] に
+#  KB 番号が入っている
+# kb_unique_list = set(
+#     [
+#         kb['Supercedence']
+#         for inner in [v['Remediations'] for v in data['Vulnerability']]
+#         for kb in inner
+#         if 'SubType' in kb.keys() and
+#         kb['SubType'] == 'Security Update' and
+#         'Supercedence' in kb.keys()
+#     ]
+# )
+# output_kb_data = {
+#     "term": target_id,
+#     "kb": kb_unique_list
+# }
+
 # Windows10 のビルド番号の情報を取得する
 url = \
     "https://winreleaseinfoprod.blob.core.windows.net/" + \
@@ -66,22 +86,6 @@ for index, content in enumerate(table):
     version = re.search(r'\d*', version).group(0)
     build = content.find_all('td')[3].string.split('.')[0]
     win10_build[version] = build
-
-# 必要な情報を取得する
-# data['Vulnerability'][0]['Remediations'][0]['SubType'] に
-#  'Security Update' が入っているか確認
-# data['Vulnerability'][0]['Remediations'][0]['Supercedence'] に
-#  KB 番号が入っている
-# set(
-#     [
-#         kb['Supercedence']
-#         for inner in [v['Remediations'] for v in data['Vulnerability']]
-#         for kb in inner
-#         if 'SubType' in kb.keys() and
-#         kb['SubType'] == 'Security Update' and
-#         'Supercedence' in kb.keys()
-#     ]
-# )
 
 # APIによる更新ファイルのリストを取得
 kb_data_list = \
